@@ -8,26 +8,26 @@ import { Category } from "./Category";
 export class Video{
 
     @PrimaryColumn()
-    id: string,
+    id: string;
 
     @Column()
-    name: string,
+    name: string;
 
     @Column()
-    description: string,
+    description: string;
 
     @Column()
-    duration: number,
+    duration: number;
 
     @Column()
-    category_id: string,
+    category_id: string;
 
     @ManyToOne(() => Category)
     @JoinColumn({name: "category_id"})
-    category: Category
+    category: Category;
 
     @CreateDateColumn()
-    create_at: Date
+    create_at: Date;
 
     constructor(){
         if(!this.id){

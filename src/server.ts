@@ -1,10 +1,11 @@
 import "reflect-metadata"
 import express from 'express'
+import bodyParser from "body-parser";
 import { AppDataSource } from "./db/data-source"
 import categoryRouter from "./router/routerCategory"
 
 const app = express()
-app.use(express.json())
+app.use(bodyParser.json())
 
 const baseUrl = "/api/v1/"
 

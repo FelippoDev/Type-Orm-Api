@@ -5,20 +5,20 @@ import { v4 as uuid } from "uuid";
 export class Category{
 
     @PrimaryColumn()
-    id: string,
+    id: string;
 
     @Column({ unique: true })
-    name: string,
+    name: string;
 
     @Column()
-    description: string,
+    description: string;
 
     @CreateDateColumn({ default: () => "NOW()" })
-    create_at: Date
+    create_at: Date;
 
     constructor(){
         if(!this.id){
-            this.id = uuid()
+            this.id = uuid();
         }
     }
 }
