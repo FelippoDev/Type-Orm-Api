@@ -3,12 +3,17 @@ import { Router } from "express";
 import { CreateCategoryController } from "../controllers/CreateCategoryController";
 import { DeleteCategoryController } from "../controllers/DeleteCategoryController";
 import { UpdateCategoryController } from "../controllers/UpdateCategoryController";
+import { CreateVideoController } from "../controllers/CreateVideoController";
+import { GetAllVideosController } from "../controllers/GetAllVideosController";
 
-const categoryRouter = Router()
+const router = Router()
 
-categoryRouter.post("/categories", new CreateCategoryController().handle)
-categoryRouter.get("/categories", new GetAllCategoriesController().handle)
-categoryRouter.delete("/categories/:id", new DeleteCategoryController().handle)
-categoryRouter.put("/categories/:id", new UpdateCategoryController().handle)
+router.post("/categories", new CreateCategoryController().handle)
+router.get("/categories", new GetAllCategoriesController().handle)
+router.delete("/categories/:id", new DeleteCategoryController().handle)
+router.put("/categories/:id", new UpdateCategoryController().handle)
 
-export default categoryRouter
+router.post("/videos", new CreateVideoController().handle)
+router.get("/videos", new GetAllVideosController().handle)
+
+export default router

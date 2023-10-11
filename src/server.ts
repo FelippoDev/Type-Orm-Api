@@ -5,7 +5,7 @@ import { AppDataSource } from "./db/data-source"
 import categoryRouter from "./router/routerCategory"
 
 const app = express()
-app.use(bodyParser.json())
+app.use(express.json())
 
 const baseUrl = "/api/v1/"
 
